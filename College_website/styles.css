@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #000000;
+    overflow-x: hidden;
+  }
+  
+  /* Header and Navigation Bar */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo {
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .navbar a:hover {
+    background: #fff;
+    color: #2575fc;
+    transform: scale(1.1);
+  }
+  
+  /* Homepage Content */
+  .homepage-content {
+    text-align: center;
+    margin: 100px auto;
+  }
+  
+  .homepage-content h1 {
+    font-size: 2.8em;
+    color: #fff;
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  .homepage-content p {
+    font-size: 1.2em;
+    color: #eee;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  /* Mid Page Section */
+  .mid-page {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .academic-resources {
+    margin-top: 30px;
+  }
+  
+  .resources-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .resource-card {
+    width: 30%;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .resource-card h4 {
+    font-size: 1.2rem;
+  }
+  
+  .resource-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .resource-card button:hover {
+    background-color: #16a085;
+  }
+  
+  /* Events and News Section */
+  .section {
+    margin-top: 40px;
+  }
+  
+  .section-title {
+    margin-bottom: 20px;
+  }
+  
+  .upcoming-events ul,
+  .news ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  .event-card,
+  .news-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .event-card h3,
+  .news-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .event-date,
+  .news-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  .event-description,
+  .news-description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #34495e;
+  }
+  
+  /* Animation for Events and News */
+  .animated {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar a {
+      margin: 5px 0;
+    }
+  
+    .resources-list {
+      flex-direction: column;
+    }
+  
+    .resource-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .homepage-content h1 {
+      font-size: 2em;
+    }
+  
+    .homepage-content p {
+      font-size: 1.1em;
+    }
+  }
+  
+

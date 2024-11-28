@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Preparation</title>
+  <link rel="stylesheet" href="placement.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">College Academics Hub</div>
+    <nav class="navbar">
+      <a href="/collegeAcademicHub/College_website/index.html" class="nav-btn">Home</a>
+      <a href="/collegeAcademicHub/College_website/library/library.html" class="nav-btn">Library Resources</a>
+      <a href="placement.html" class="nav-btn active">Placement Preparation</a>
+      <a href="/collegeAcademicHub/College_website/coading/coding.html" class="nav-btn">Coding Practice</a>
+      <a href="labs.html" class="nav-btn">Virtual Labs</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="homepage-content">
+      <h1 class="fadeInDown">Welcome to Placement Preparation</h1>
+      <p class="fadeInUp">Explore various resources, tips, and tools to help you prepare for placements effectively. This page is designed to guide you through every step of the placement journey.</p>
+
+      <!-- Section 1: Placement Resources -->
+      <div class="content-section fadeIn">
+        <h2>Placement Resources</h2>
+        <p>Access materials, sample papers, and more to boost your preparation. Start with the basics and gradually advance to technical interviews.</p>
+        <button onclick="toggleResources()">Show Resources</button>
+        <div id="resources" style="display:none;">
+          <ul>
+            <li>Resume Writing Tips</li>
+            <li>Mock Interview Questions</li>
+            <li>Sample Placement Papers</li>
+            <li>Interview Etiquette and Communication Skills</li>
+            <li>List of Recommended Books</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 2: Key Topics for Placement -->
+      <div class="content-section fadeIn">
+        <h2>Key Topics for Placement</h2>
+        <p>Focus on the following key areas to crack your placement exams and interviews:</p>
+        <ul>
+          <li>Data Structures & Algorithms</li>
+          <li>Object-Oriented Programming</li>
+          <li>Problem Solving & Logical Reasoning</li>
+          <li>Database Management Systems</li>
+          <li>Operating Systems and Networking</li>
+        </ul>
+      </div>
+
+      <!-- Section 3: Tips for Cracking Interviews -->
+      <div class="content-section fadeIn">
+        <h2>Tips for Cracking Interviews</h2>
+        <p>Here are some important tips to keep in mind during your interviews:</p>
+        <ol>
+          <li>Practice coding on platforms like LeetCode and HackerRank.</li>
+          <li>Work on your communication skills to explain your thought process clearly.</li>
+          <li>Review common interview questions and solutions beforehand.</li>
+          <li>Maintain a calm and confident demeanor during the interview.</li>
+        </ol>
+      </div>
+
+      <!-- Section 4: Placement Application -->
+      <div class="content-section fadeIn">
+        <h2>Placement Application</h2>
+        <p>Fill out the form to apply for the placement drive and submit your resume.</p>
+        <form id="placement-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" required><br>
+
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" required><br>
+
+          <button type="submit" id="form-submit">Submit Application</button>
+        </form>
+      </div>
+
+      <!-- Section 5: Alumni Success Stories -->
+      <div class="content-section fadeIn">
+        <h2>Alumni Success Stories</h2>
+        <div class="alumni-stories">
+          <div class="story">
+            <h3>John Doe - Software Engineer at Google</h3>
+            <p>John was an outstanding student and participated in coding competitions, which greatly enhanced his problem-solving skills. His technical interview with Google was challenging, but his preparation paid off.</p>
+          </div>
+          <div class="story">
+            <h3>Jane Smith - Data Scientist at Microsoft</h3>
+            <p>Jane's expertise in Data Structures and Algorithms, combined with her passion for data science, helped her stand out in interviews. She now works as a Data Scientist at Microsoft.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: FAQ -->
+      <div class="content-section fadeIn">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <ul>
+          <li><strong>Q:</strong> When do the placement drives start?</li>
+          <li><strong>A:</strong> Placements usually begin in the final year of your course, typically in the 7th or 8th semester.</li>
+
+          <li><strong>Q:</strong> How can I improve my chances of getting placed?</li>
+          <li><strong>A:</strong> Focus on building your technical skills, communication abilities, and resume-building activities. Practice mock interviews and coding challenges regularly.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 College Academics Hub. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // JS for resource toggle functionality
+    function toggleResources() {
+      const resources = document.getElementById('resources');
+      resources.style.display = resources.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

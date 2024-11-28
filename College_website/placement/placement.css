@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .navbar a:hover {
+    background: #fff;
+    color: #2575fc;
+    transform: scale(1.1);
+  }
+  
+  .navbar .active {
+    background: #2575fc;
+    color: #fff;
+  }
+  
+  .content {
+    text-align: center;
+    margin: 50px auto;
+  }
+  
+  .homepage-content {
+    margin: 40px 0;
+  }
+  
+  .homepage-content h1, .content-section h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease-in-out;
+  }
+  
+  .homepage-content p, .content-section p {
+    font-size: 1.2em;
+    color: #eee;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+  .content-section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+  }
+  
+  .content-section ul, .content-section ol {
+    padding-left: 40px;
+  }
+  
+  .alumni-stories {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .story {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 45%;
+  }
+  
+  .story h3 {
+    font-size: 1.3em;
+    color: #fff;
+  }
+  
+  footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #2575fc;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #6a11cb;
+  }
+  
+  input[type="text"], input[type="email"], input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  input[type="file"] {
+    max-width: 400px;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-50px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  

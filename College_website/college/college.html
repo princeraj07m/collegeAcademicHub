@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneVelTech</title>
+    <link rel="stylesheet" href="college.css">
+    <link rel="shortcut icon" href="images/Untitled-removebg-preview.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="items-left">
+            <a href="#1">Links</a>
+            <a href="#2">Percentages</a>
+        </div>
+        <div class="logo-container">
+            <h1 class="logo">OneVelTech</h1>
+        </div>
+        <div class="container"></div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Links Section -->
+        <div class="Links" id="1">
+            <h1>LINKS</h1>
+            <div class="links-buttons">
+                <button class="link" onclick="window.open('http://ams.veltech.edu.in/', '_blank')">AMS</button>
+                <button class="link" onclick="window.open('http://results.veltech.edu.in/Stulogin/index.aspx', '_blank')">Results</button>
+                <button class="link" onclick="window.open('http://results.veltech.edu.in/Mentor/index1.aspx', '_blank')">SiS</button>
+                <button class="link" onclick="window.open('https://www.veltech.edu.in/', '_blank')">Official website</button>
+            </div>
+        </div>
+
+        <!-- Percentages Section -->
+        <div class="Links" id="2">
+            <h1>Percentages</h1>
+            <div class="Percentages-button">
+                <button class="link" id="man">Attendance</button>
+                <button class="link" id="marks">Test</button>
+                <button class="link" onclick="showGPAOptions()">GPA</button>
+            </div>
+
+            <!-- Attendance Section -->
+            <div class="attendance-section">
+                <input type="number" id="enter" placeholder="Total hours">
+                <input type="number" id="enter_2" placeholder="Attended hours">
+                <button id="submit" class="link">Submit</button>
+
+                <!-- Results Table -->
+                <table id="results">
+                    <thead>
+                        <tr>
+                            <th>Percentage</th>
+                            <th>Hours to Attend</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- Test Section -->
+            <div class="test-section">
+                <div class="Percentages-button">
+                    <button id="unit" class="link">Unit Test</button>
+                    <button id="mid" class="link">Mid</button>
+                </div>
+                <input type="number" placeholder="Test-1 marks" id="marks1">
+                <input type="number" placeholder="Test-2 marks" id="marks2">
+                <input type="number" placeholder="Test-3 marks" id="marks3" style="display: none;">
+                <input type="number" placeholder="Attendance mark" id="att" style="display: none;">
+                <input type="number" placeholder="Assignment mark" id="ass" style="display: none;">
+                <button id="submit-2" class="link">Submit</button>
+                <div class="result-container">
+                    <p id="result"></p>
+                </div>
+            </div>
+
+            <!-- GPA & CGPA Section -->
+            <div id="gpaOptions" style="display: none;">
+                <button class="link" onclick="showGPASection()">Calculate GPA</button>
+                <button class="link" onclick="showCGPASection()">Calculate CGPA</button>
+            </div>
+            <div id="gpaSection" style="display: none;">
+                <input type="number" id="numSubjectsGPA" min="1" placeholder="Enter number of subjects">
+                <div class="gpa-button-container">
+                    <button class="link" id="add-subjects-gpa" onclick="addSubjectRowsGPA()">Add Subjects</button>
+                    <table id="subjectTableGPA"></table>
+                    <div class="gpa-actions">
+                        <button class="link" id="calculate-gpa" onclick="calculateGPA()">Calculate GPA</button>
+                        <button class="link" id="reset-gpa" onclick="resetGPAForm()">Reset</button>
+                    </div>
+                </div>
+                <p id="resultGPA">Your GPA out of 10: </p>
+            </div>
+
+            <div id="cgpaSection" style="display: none;">
+                <input type="number" id="numSemesters" min="1" placeholder="Enter number of semesters">
+                <div class="cgpa-container">
+                    <button class="link" id="add-semester-button" onclick="addSemesterRows()">Add Semesters</button>
+                    <table id="semesterTable">
+                        <thead>
+                            <tr>
+                                <th>Semester</th>
+                                <th>Total Credits</th>
+                                <th>GPA</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div class="cgpa-actions">
+                        <button class="link" id="calculate-cgpa-button" onclick="calculateCGPA()">Calculate CGPA</button>
+                        <button class="link" id="reset-cgpa-button" onclick="resetCGPAForm()">Reset</button>
+                    </div>
+                </div>
+                <p id="resultCGPA">Your CGPA out of 10: </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container" id="5">
+            <div class="contact-form">
+                <h3>Feedbacks:</h3>
+                <form action="https://formspree.io/f/mbljrqpg" method="POST">
+                    <div class="form-row">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="query">Your Feedback:</label>
+                        <textarea id="query" name="query" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="share-resources">
+                <h3>Share Your Resources</h3>
+                <button onclick="window.open('https://forms.gle/deF3KTJCSZyFjdkB7', '_blank')">Share Now</button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="college.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, #4f46e5, #6a5acb);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav .logo-container .logo {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.nav .items-left a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav .items-left a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Links Section */
+.Links h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+/* Buttons */
+button.link {
+    display: inline-block;
+    background: #ffffff;
+    color: #4f46e5;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+button.link:hover {
+    background: #6a5acb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Input Fields */
+input[type="number"], 
+input[type="text"], 
+textarea {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.8rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffcc00;
+}
+
+/* Tables */
+table {
+    margin: 2rem auto;
+    border-collapse: collapse;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #fff;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+table th {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+}
+
+footer button {
+    background-color: #ffcc00;
+    color: #4f46e5;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer button:hover {
+    background-color: #fff;
+    color: #6a5acb;
+}

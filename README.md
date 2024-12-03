@@ -1,2 +1,2 @@
-<h1>A College Websapp</h1>
+<h1>A College Webapp</h1>
 <h3> Full Stack Project .......</h3>

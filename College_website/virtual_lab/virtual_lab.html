@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #4a148c, #6a1b9a);
+            color: white;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #320b86;
+            animation: fadeIn 2s ease;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        /* Card Container */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: #5e35b1;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            animation: slideIn 1.5s ease;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #ffeb3b;
+            text-decoration: none;
+            font-weight: bold;
+            background: #4527a0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .card a:hover {
+            background: #311b92;
+        }
+
+        /* Floating Animation */
+        .card {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Virtual Labs for B.Tech Students</h1>
+        <p>Explore and simulate experiments from the comfort of your home!</p>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3>Computer Science Labs</h3>
+            <p>Simulate data structures, algorithms, and AI models in a virtual environment.</p>
+            <a href="https://csevirtual.lab/">Explore CS Labs</a>
+        </div>
+        <div class="card">
+            <h3>Electronics Labs</h3>
+            <p>Perform circuit simulations and study electronic components virtually.</p>
+            <a href="https://electronics-lab.com/">Explore Electronics Labs</a>
+        </div>
+        <div class="card">
+            <h3>Mechanical Labs</h3>
+            <p>Simulate thermal, fluid, and mechanical systems with virtual tools.</p>
+            <a href="https://mechanicallab.org/">Explore Mechanical Labs</a>
+        </div>
+        <div class="card">
+            <h3>Civil Labs</h3>
+            <p>Visualize structural analysis and environmental engineering experiments.</p>
+            <a href="https://civilvirtual.lab/">Explore Civil Labs</a>
+        </div>
+        <div class="card">
+            <h3>Physics Labs</h3>
+            <p>Explore optics, mechanics, and electromagnetism with simulations.</p>
+            <a href="https://phet.colorado.edu/">Explore Physics Labs</a>
+        </div>
+        <div class="card">
+            <h3>Chemistry Labs</h3>
+            <p>Simulate chemical reactions, titrations, and organic chemistry experiments.</p>
+            <a href="https://chemcollective.org/">Explore Chemistry Labs</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Stylish Animations
+
+        // Animate Cards on Scroll
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        });
+
+        cards.forEach(card => observer.observe(card));
+
+        // Click Animation
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'rotateY(180deg)';
+                setTimeout(() => {
+                    card.style.transform = 'rotateY(0deg)';
+                }, 150);
+            });
+        });
+
+        // Floating Animation on Hover
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.animation = 'none';
+            });
+
+            card.addEventListener('mouseout', () => {
+                card.style.animation = 'float 4s ease-in-out infinite';
+            });
+        });
+    </script>
+</body>
+</html>

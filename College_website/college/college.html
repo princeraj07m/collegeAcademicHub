@@ -3,143 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneVelTech</title>
+    <title>Stylish Education Website</title>
     <link rel="stylesheet" href="college.css">
-    <link rel="shortcut icon" href="images/Untitled-removebg-preview.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <div class="nav">
+    <nav class="nav">
+        <div class="logo-container" id="logo">
+            <span class="logo">EduTrack</span>
+        </div>
         <div class="items-left">
-            <a href="#1">Links</a>
-            <a href="#2">Percentages</a>
+            <a href="#attendance">Attendance</a>
+            <a href="#marks">Marks</a>
+            <a href="#gpa-cgpa">GPA/CGPA</a>
         </div>
-        <div class="logo-container">
-            <h1 class="logo">OneVelTech</h1>
+    </nav>
+
+    <!-- Links Section -->
+    <section class="Links">
+        <h1>Welcome to EduTrack</h1>
+        <button class="link" id="man">Attendance Tracker</button>
+        <button class="link" id="marks">Marks Calculator</button>
+        <button class="link" onclick="showGPAOptions()">GPA / CGPA Calculator</button>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance">
+        <h2>Attendance Tracker</h2>
+        <input type="number" id="enter" placeholder="Total Hours" style="display:none;">
+        <input type="number" id="enter_2" placeholder="Hours Attended" style="display:none;">
+        <button id="submit" style="display:none;">Calculate Attendance</button>
+        <table id="results" style="visibility:hidden;">
+            <thead>
+                <tr>
+                    <th>Required %</th>
+                    <th>Hours Needed</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Marks Section -->
+    <section id="marks-section">
+        <h2>Marks Calculator</h2>
+        <button id="unit">Unit Test</button>
+        <button id="mid">Mid Test</button>
+
+        <input type="number" id="marks1" placeholder="Test 1 Marks" style="display:none;">
+        <input type="number" id="marks2" placeholder="Test 2 Marks" style="display:none;">
+        <input type="number" id="marks3" placeholder="Test 3 Marks" style="display:none;">
+        <input type="number" id="att" placeholder="Attendance Marks" style="display:none;">
+        <input type="number" id="ass" placeholder="Assignment Marks" style="display:none;">
+        <button id="submit-2" style="display:none;">Calculate Marks</button>
+        <p id="result"></p>
+    </section>
+
+    <!-- GPA / CGPA Section -->
+    <section id="gpa-cgpa">
+        <h2>GPA / CGPA Calculator</h2>
+        <button onclick="showGPASection()">GPA Calculator</button>
+        <button onclick="showCGPASection()">CGPA Calculator</button>
+
+        <div id="gpaSection" style="display:none;">
+            <h3>GPA Calculator</h3>
+            <input type="number" id="numSubjectsGPA" placeholder="Number of Subjects">
+            <button onclick="addSubjectRowsGPA()">Add Subjects</button>
+            <table id="subjectTableGPA"></table>
+            <button onclick="calculateGPA()">Calculate GPA</button>
+            <p id="resultGPA">Your GPA out of 10: </p>
         </div>
-        <div class="container"></div>
-    </div>
 
-    <!-- Content Section -->
-    <div class="content">
-        <!-- Links Section -->
-        <div class="Links" id="1">
-            <h1>LINKS</h1>
-            <div class="links-buttons">
-                <button class="link" onclick="window.open('http://ams.veltech.edu.in/', '_blank')">AMS</button>
-                <button class="link" onclick="window.open('http://results.veltech.edu.in/Stulogin/index.aspx', '_blank')">Results</button>
-                <button class="link" onclick="window.open('http://results.veltech.edu.in/Mentor/index1.aspx', '_blank')">SiS</button>
-                <button class="link" onclick="window.open('https://www.veltech.edu.in/', '_blank')">Official website</button>
-            </div>
+        <div id="cgpaSection" style="display:none;">
+            <h3>CGPA Calculator</h3>
+            <input type="number" id="numSemesters" placeholder="Number of Semesters">
+            <button onclick="addSemesterRows()">Add Semesters</button>
+            <table id="semesterTable"></table>
+            <button onclick="calculateCGPA()">Calculate CGPA</button>
+            <p id="resultCGPA">Your CGPA out of 10: </p>
         </div>
+    </section>
 
-        <!-- Percentages Section -->
-        <div class="Links" id="2">
-            <h1>Percentages</h1>
-            <div class="Percentages-button">
-                <button class="link" id="man">Attendance</button>
-                <button class="link" id="marks">Test</button>
-                <button class="link" onclick="showGPAOptions()">GPA</button>
-            </div>
-
-            <!-- Attendance Section -->
-            <div class="attendance-section">
-                <input type="number" id="enter" placeholder="Total hours">
-                <input type="number" id="enter_2" placeholder="Attended hours">
-                <button id="submit" class="link">Submit</button>
-
-                <!-- Results Table -->
-                <table id="results">
-                    <thead>
-                        <tr>
-                            <th>Percentage</th>
-                            <th>Hours to Attend</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-
-            <!-- Test Section -->
-            <div class="test-section">
-                <div class="Percentages-button">
-                    <button id="unit" class="link">Unit Test</button>
-                    <button id="mid" class="link">Mid</button>
-                </div>
-                <input type="number" placeholder="Test-1 marks" id="marks1">
-                <input type="number" placeholder="Test-2 marks" id="marks2">
-                <input type="number" placeholder="Test-3 marks" id="marks3" style="display: none;">
-                <input type="number" placeholder="Attendance mark" id="att" style="display: none;">
-                <input type="number" placeholder="Assignment mark" id="ass" style="display: none;">
-                <button id="submit-2" class="link">Submit</button>
-                <div class="result-container">
-                    <p id="result"></p>
-                </div>
-            </div>
-
-            <!-- GPA & CGPA Section -->
-            <div id="gpaOptions" style="display: none;">
-                <button class="link" onclick="showGPASection()">Calculate GPA</button>
-                <button class="link" onclick="showCGPASection()">Calculate CGPA</button>
-            </div>
-            <div id="gpaSection" style="display: none;">
-                <input type="number" id="numSubjectsGPA" min="1" placeholder="Enter number of subjects">
-                <div class="gpa-button-container">
-                    <button class="link" id="add-subjects-gpa" onclick="addSubjectRowsGPA()">Add Subjects</button>
-                    <table id="subjectTableGPA"></table>
-                    <div class="gpa-actions">
-                        <button class="link" id="calculate-gpa" onclick="calculateGPA()">Calculate GPA</button>
-                        <button class="link" id="reset-gpa" onclick="resetGPAForm()">Reset</button>
-                    </div>
-                </div>
-                <p id="resultGPA">Your GPA out of 10: </p>
-            </div>
-
-            <div id="cgpaSection" style="display: none;">
-                <input type="number" id="numSemesters" min="1" placeholder="Enter number of semesters">
-                <div class="cgpa-container">
-                    <button class="link" id="add-semester-button" onclick="addSemesterRows()">Add Semesters</button>
-                    <table id="semesterTable">
-                        <thead>
-                            <tr>
-                                <th>Semester</th>
-                                <th>Total Credits</th>
-                                <th>GPA</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <div class="cgpa-actions">
-                        <button class="link" id="calculate-cgpa-button" onclick="calculateCGPA()">Calculate CGPA</button>
-                        <button class="link" id="reset-cgpa-button" onclick="resetCGPAForm()">Reset</button>
-                    </div>
-                </div>
-                <p id="resultCGPA">Your CGPA out of 10: </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <div class="footer-container" id="5">
-            <div class="contact-form">
-                <h3>Feedbacks:</h3>
-                <form action="https://formspree.io/f/mbljrqpg" method="POST">
-                    <div class="form-row">
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-row">
-                        <label for="query">Your Feedback:</label>
-                        <textarea id="query" name="query" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="share-resources">
-                <h3>Share Your Resources</h3>
-                <button onclick="window.open('https://forms.gle/deF3KTJCSZyFjdkB7', '_blank')">Share Now</button>
-            </div>
+        <div class="footer-container">
+            <h3>EduTrack</h3>
+            <p>Track your attendance, marks, GPA, and CGPA with ease.</p>
         </div>
     </footer>
 

@@ -379,3 +379,5 @@ function resetCGPAForm() {
   document.getElementById('resultCGPA').textContent = 'Your CGPA out of 10: ';
 }
 
+
+

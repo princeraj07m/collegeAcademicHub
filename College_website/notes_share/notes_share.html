@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #4a148c, #6a1b9a);
+            color: white;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #320b86;
+            animation: fadeIn 2s ease;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        /* Form Section */
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #5e35b1;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .form-container button {
+            background: #ffeb3b;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #fbc02d;
+        }
+
+        /* Notes List Section */
+        .notes-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #4527a0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .notes-container input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .notes-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notes-container li {
+            background: #6a1b9a;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .notes-container li button {
+            background: #ffeb3b;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Note Sharing Section</h1>
+        <p>Upload, share, and download notes seamlessly!</p>
+    </div>
+
+    <!-- Upload Form -->
+    <div class="form-container">
+        <h3>Upload Notes</h3>
+        <label for="subject">Subject Name:</label>
+        <input type="text" id="subject" placeholder="Enter subject name" required>
+
+        <label for="year">Select Year:</label>
+        <select id="year">
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+            <option value="other">Others</option>
+        </select>
+
+        <label for="file">Upload PDF:</label>
+        <input type="file" id="file" accept="application/pdf">
+
+        <button onclick="uploadNote()">Upload</button>
+    </div>
+
+    <!-- Notes List Section -->
+    <div class="notes-container">
+        <input type="text" id="search" placeholder="Search notes..." oninput="searchNotes()">
+        <ul id="notes-list">
+            <!-- Dynamic Notes List -->
+        </ul>
+    </div>
+
+    <script>
+        let notes = []; // Array to store uploaded notes
+
+        // Function to upload a note
+        function uploadNote() {
+            const subject = document.getElementById('subject').value.trim();
+            const year = document.getElementById('year').value;
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+
+            if (!subject || !file) {
+                alert('Please fill in all fields and upload a file.');
+                return;
+            }
+
+            const note = {
+                subject,
+                year,
+                fileName: file.name,
+                fileURL: URL.createObjectURL(file),
+            };
+
+            notes.push(note);
+            displayNotes();
+            alert('Note uploaded successfully!');
+            document.getElementById('subject').value = '';
+            fileInput.value = '';
+        }
+
+        // Function to display notes
+        function displayNotes() {
+            const notesList = document.getElementById('notes-list');
+            notesList.innerHTML = '';
+
+            notes.forEach((note, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div>
+                        <strong>${note.subject}</strong> - Year: ${note.year}
+                    </div>
+                    <button onclick="downloadFile(${index})">Download</button>
+                `;
+                notesList.appendChild(listItem);
+            });
+        }
+
+        // Function to download a file
+        function downloadFile(index) {
+            const note = notes[index];
+            const a = document.createElement('a');
+            a.href = note.fileURL;
+            a.download = note.fileName;
+            a.click();
+        }
+
+        // Function to search notes
+        function searchNotes() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const filteredNotes = notes.filter(note =>
+                note.subject.toLowerCase().includes(query) ||
+                note.year.toLowerCase().includes(query)
+            );
+            const notesList = document.getElementById('notes-list');
+            notesList.innerHTML = '';
+
+            filteredNotes.forEach((note, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div>
+                        <strong>${note.subject}</strong> - Year: ${note.year}
+                    </div>
+                    <button onclick="downloadFile(${index})">Download</button>
+                `;
+                notesList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>

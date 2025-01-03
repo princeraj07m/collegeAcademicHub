@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #4a148c, #6a1b9a);
+            color: white;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #320b86;
+            animation: fadeIn 2s ease;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        /* Timetable Form Section */
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #5e35b1;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1.5s ease;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .form-container button {
+            background: #ffeb3b;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #fbc02d;
+        }
+
+        /* Timetable Table */
+        .timetable-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #4527a0;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease;
+        }
+
+        .timetable-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .timetable-container th, .timetable-container td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #311b92;
+            background: #6a1b9a;
+            color: white;
+        }
+
+        .timetable-container th {
+            background: #4527a0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Timetable Planner</h1>
+        <p>Create your personalized timetable for 10 subjects!</p>
+    </div>
+    <div class="form-container">
+        <h3>Enter Your Subjects</h3>
+        <div id="subjects-input">
+            <!-- Dynamic Inputs for Subjects -->
+        </div>
+        <button onclick="generateTimetable()">Generate Timetable</button>
+    </div>
+    <div class="timetable-container" id="timetable">
+        <!-- Timetable Table -->
+    </div>
+
+    <script>
+        // Create inputs for 10 subjects dynamically
+        const subjectsContainer = document.getElementById('subjects-input');
+        for (let i = 1; i <= 10; i++) {
+            const label = document.createElement('label');
+            label.innerText = `Subject ${i}:`;
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.id = `subject-${i}`;
+            input.placeholder = `Enter subject ${i} name`;
+            subjectsContainer.appendChild(label);
+            subjectsContainer.appendChild(input);
+        }
+
+        // Function to generate a timetable
+        function generateTimetable() {
+            const timetableDiv = document.getElementById('timetable');
+            timetableDiv.innerHTML = ''; // Clear previous timetable
+
+            // Collect subjects
+            const subjects = [];
+            for (let i = 1; i <= 10; i++) {
+                const subject = document.getElementById(`subject-${i}`).value.trim();
+                if (subject) {
+                    subjects.push(subject);
+                } else {
+                    alert(`Please fill in all subject names!`);
+                    return;
+                }
+            }
+
+            // Days and time slots
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+            const timeSlots = ['9:00-10:00 AM', '10:15-11:15 AM', '11:30-12:30 PM', '1:30-2:30 PM', '2:45-3:45 PM'];
+
+            // Create timetable table
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            // Table header
+            const headerRow = document.createElement('tr');
+            headerRow.innerHTML = `<th>Day/Time</th>`;
+            timeSlots.forEach(slot => {
+                const th = document.createElement('th');
+                th.innerText = slot;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+
+            // Table body
+            days.forEach(day => {
+                const row = document.createElement('tr');
+                const dayCell = document.createElement('td');
+                dayCell.innerText = day;
+                row.appendChild(dayCell);
+
+                timeSlots.forEach(() => {
+                    const subjectCell = document.createElement('td');
+                    const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+                    subjectCell.innerText = randomSubject;
+                    row.appendChild(subjectCell);
+                });
+
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+            timetableDiv.appendChild(table);
+        }
+    </script>
+</body>
+</html>

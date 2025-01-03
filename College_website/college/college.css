@@ -16,7 +16,7 @@ body {
 /* Navigation Bar */
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem 2rem;
@@ -27,7 +27,8 @@ body {
 
 .nav .logo-container .logo {
     font-size: 1.8rem;
-    color: #fff;
+    color: #ffffff;
+    justify-content: center;
 }
 
 .nav .items-left a {
@@ -42,41 +43,35 @@ body {
     text-decoration: underline;
 }
 
-/* Links Section */
-.Links h1 {
+/* Main Content Section */
+main {
+    padding: 2rem;
     text-align: center;
-    margin-top: 2rem;
+}
+
+/* Section Titles */
+h1.section-title {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
     color: #fff;
 }
 
-/* Buttons */
-button.link {
-    display: inline-block;
-    background: #ffffff;
-    color: #4f46e5;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    margin: 0.5rem;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
+/* Form Styling */
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 2rem auto;
 }
 
-button.link:hover {
-    background: #6a5acb;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* Input Fields */
-input[type="number"], 
-input[type="text"], 
-textarea {
+form input[type="number"], 
+form input[type="text"], 
+form textarea, 
+form select {
     display: block;
-    width: 80%;
-    margin: 1rem auto;
+    width: 100%;
+    margin-bottom: 1rem;
     padding: 0.8rem;
     border: 2px solid #fff;
     border-radius: 10px;
@@ -94,12 +89,30 @@ input:focus, textarea:focus {
     border-color: #ffcc00;
 }
 
+button.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #ffcc00;
+    color: #4f46e5;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button.submit-button:hover {
+    background: #fff;
+    color: #6a5acb;
+}
+
 /* Tables */
 table {
-    margin: 2rem auto;
+    width: 100%;
     border-collapse: collapse;
-    width: 90%;
     background-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
 }
 
 table th, table td {
@@ -146,3 +159,27 @@ footer button:hover {
     background-color: #fff;
     color: #6a5acb;
 }
+
+/* Buttons */
+button.link {
+    display: inline-block;
+    background: #ffffff;
+    color: #4f46e5;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+button.link:hover {
+    background: #6a5acb;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+
+

@@ -82,7 +82,7 @@ Hey, I'm **Prince Kumar** — a passionate **Software Engineer** focused on buil
 
 Here are a few highlights of my academic and professional journey:
 
-- 🏆 **Smart India Hackathon **  
+- 🏆 **Smart India Hackathon**  
   *Date*: Sept 28, 2024  
   *Description*: My team developed an AI-driven pollution monitoring system.
 

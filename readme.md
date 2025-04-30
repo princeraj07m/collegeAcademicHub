@@ -59,16 +59,16 @@ Hey, I'm **Prince Kumar** — a passionate **Software Engineer** focused on buil
 
 ---
 
-## 📅 **Upcoming Events**
+## 📅 **Events**
 
-### 🚀 **Hackathon XYZ**  
-🗓 **Date**: Jan 25, 2025  
-🏙 **Location**: Online  
+### 🚀 **ETHOS Hackathon **  
+🗓 **Date**: Nov 25, 2024  
+🏙 **Location**: Online , iit Guwahati 
 *Description*: A national-level coding challenge focused on innovation.
 
 ### 🤖 **Workshop on AI**  
-🗓 **Date**: Feb 14, 2025  
-🏙 **Location**: Your College  
+🗓 **Date**: Aug 14, 2024  
+🏙 **Location**: Veltech University Chennai 
 *Description*: Hands-on session on Machine Learning and AI Tools.
 
 ### 🌍 **Tech Talk: Blockchain**  
@@ -82,13 +82,10 @@ Hey, I'm **Prince Kumar** — a passionate **Software Engineer** focused on buil
 
 Here are a few highlights of my academic and professional journey:
 
-- 🏆 **Smart India Hackathon Winner**  
-  *Date*: Nov 28, 2024  
+- 🏆 **Smart India Hackathon **  
+  *Date*: Sept 28, 2024  
   *Description*: My team developed an AI-driven pollution monitoring system.
 
-- 💼 **Internship at ABC Corp**  
-  *Date*: Nov 27, 2024  
-  *Description*: Completed a 3-month internship in full-stack development.
 
 - 📑 **Published Research Paper**  
   *Date*: Nov 26, 2024  
@@ -116,21 +113,10 @@ Here are a few highlights of my academic and professional journey:
 
 Feel free to reach out to me:
 
-- 📧 **Email**: [princekumar@example.com](mailto:princekumar@example.com)
-- 💻 **GitHub**: [Prince Kumar on GitHub](https://github.com/yourusername)
-- 🔗 **LinkedIn**: [Prince Kumar on LinkedIn](https://www.linkedin.com/in/yourlinkedin)
+- 📧 **Email**: [princekumar@example.com](mailto:princerajce4@gmail.com)
+- 💻 **GitHub**: [Prince Kumar on GitHub](https://github.com/princeraj07m)
+- 🔗 **LinkedIn**: [Prince Kumar on LinkedIn](https://shorturl.at/108hN)
 
----
-
-## 🎨 **Screenshots**
-
-![Homepage](./images/homepage-screenshot.png)  
-*Example: Homepage*
-
-![Projects Page](./images/projects-screenshot.png)  
-*Example: Projects Page*
-
----
 
 ## 💬 **Contribute**
 
@@ -138,78 +124,4 @@ I welcome contributions, suggestions, and feedback! Open an issue or submit a pu
 
 ---
 
-## 🛡️ **License**
 
-This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more information.
-
----
-
-_Thank you for visiting my portfolio!_ ✨
-
----
-
-<style>
-    h1, h2, h3, h4 {
-        font-family: 'Arial', sans-serif;
-        color: #2c3e50;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    p {
-        font-family: 'Roboto', sans-serif;
-        color: #34495e;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        text-align: justify;
-        margin-bottom: 15px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #2980b9;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    a:hover {
-        color: #3498db;
-    }
-
-    .badge {
-        font-size: 1rem;
-        margin: 5px 10px;
-    }
-
-    .card {
-        background-color: #ecf0f1;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
-
-    .button {
-        display: inline-block;
-        background-color: #3498db;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-        background-color: #2980b9;
-    }
-
-    img {
-        width: 100%;
-        max-width: 1200px;
-        height: auto;
-        margin-top: 10px;
-        border-radius: 8px;
-    }
-</style>

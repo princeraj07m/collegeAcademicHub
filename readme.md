@@ -61,7 +61,7 @@ Hey, I'm **Prince Kumar** — a passionate **Software Engineer** focused on buil
 
 ## 📅 **Events**
 
-### 🚀 **ETHOS Hackathon **  
+### 🚀 **ETHOS Hackathon**  
 🗓 **Date**: Nov 25, 2024  
 🏙 **Location**: Online , iit Guwahati 
 *Description*: A national-level coding challenge focused on innovation.

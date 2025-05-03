@@ -4,7 +4,8 @@ Using HTML + CSS + JS
 <a href="https://plain-portfolio-nine.vercel.app/" target="_blank">
   <img src="https://img.shields.io/badge/Explore%20Now%20→%20Click%20Here-Portfolio-%2300b894?style=for-the-badge&logo=github&logoColor=white" alt="Launch Portfolio" />
 </a>
-Use desktop for better experience.😉
+  Use desktop for better experience 😉
+<br>
 
 Welcome to **Prince Kumar's Portfolio**, a collection of my academic and professional projects, achievements, and contributions to the tech world. I'm passionate about developing impactful digital experiences. Explore the sections below to see my work and learning contributions!
 

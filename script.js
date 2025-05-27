@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Smooth Scroll Animation (optional enhancement)
+// Smooth Scroll Animation 
 const scrollLinks = document.querySelectorAll('.nav-btn[href^="#"]');
 scrollLinks.forEach(link => {
   link.addEventListener('click', (e) => {
@@ -24,7 +24,7 @@ scrollLinks.forEach(link => {
   });
 });
 
-// Mobile Navbar Toggle (if using a hamburger menu in the future)
+// Mobile Navbar Toggle 
 const menuToggle = document.getElementById('menu-toggle');
 const navbar = document.querySelector('.navbar');
 const hideMenuButton = document.getElementById('hideMenuButton');
